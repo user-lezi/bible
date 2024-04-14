@@ -6,6 +6,8 @@ const Chapter_1 = require("./Chapter");
 class Book {
     name;
     abbr;
+    allAbbr;
+    preferredAbbr;
     chapters = [];
     constructor(name, chaptersRaw) {
         if (!Book.isValidBookName(name)) {
@@ -13,8 +15,10 @@ class Book {
                 `Available: [${typings_1.Books.join(", ")}]`);
         }
         this.name = name;
-        name = /\d /.test(name) ? name.split(' ').reverse().join('_') : name.replaceAll(' ', '_');
+        name = Book.uncleanName(name);
         this.abbr = Object.entries(typings_1.DefinedBookAlias).find(x => x[0] === name)?.[1] || name;
+        this.allAbbr = typings_1.BookAbbr[name];
+        this.preferredAbbr = typings_1.PreferredAbbr[name];
         let c = {};
         for (let chapterRaw of chaptersRaw) {
             let chp = chapterRaw.split(' ')[1].split(':')[0];
@@ -28,7 +32,30 @@ class Book {
         ;
     }
     static isValidBookName(name) {
-        return typings_1.Books.includes(name);
+        return Book.parseBookName(name) !== '';
+    }
+    static parseBookName(name) {
+        let bookName = '';
+        for (let book in typings_1.BookAbbr) {
+            let abbrs = typings_1.BookAbbr[book];
+            for (let abbr of abbrs) {
+                if (name.toLowerCase() == abbr.toLowerCase()) {
+                    bookName = abbrs[abbrs.length - 1];
+                    break;
+                }
+            }
+        }
+        return bookName;
+    }
+    static cleanName(name) {
+        return /_\d/.test(name) ?
+            name.split('_').reverse().join(' ') :
+            name.replaceAll(' ', '_');
+    }
+    static uncleanName(name) {
+        return /_\d/.test(name) ?
+            name.split(' ').reverse().join('_') :
+            name.replaceAll(' ', '_');
     }
 }
 exports.Book = Book;

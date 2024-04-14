@@ -1,4 +1,5 @@
-import { BasicEnglishBible } from "../index";
+import { BasicEnglishBible, BookAbbr } from "../index";
+
 
 let bible = new BasicEnglishBible();
 
