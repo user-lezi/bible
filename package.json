@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "tsc && node dist/__tests__/runner.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -1,0 +1,1 @@
+{"version":3,"file":"getBible.js","sourceRoot":"","sources":["../../src/functions/getBible.ts"],"names":[],"mappings":";;AAAA,2BAAkC;AAClC,+BAA4B;AAG5B,SAAwB,QAAQ,CAAC,WAAwB;IACvD,IAAI,IAAI,GAAG,IAAA,WAAI,EAAC,SAAS,EAAE,IAAI,EAAE,IAAI,EAAE,OAAO,EAAE,WAAW,GAAG,MAAM,CAAC,CAAC;IAEtE,OAAO,IAAA,iBAAY,EAAC,IAAI,EAAE,MAAM,CAAC,CAAC;AACpC,CAAC;AAJD,2BAIC"}

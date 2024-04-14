@@ -1,1 +1,2 @@
-console.log(69 * 568)
+
+export * from "./typings";
