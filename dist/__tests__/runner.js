@@ -39,7 +39,7 @@ async function main() {
         name = name.replace(/ /g, "/");
         name = `./${name}.js`;
         let path = (0, path_1.join)(__dirname, name);
-        if (!(0, fs_1.existsSync)(path) && (0, fs_1.statSync)(path).isDirectory())
+        if (!(0, fs_1.existsSync)(path) || (0, fs_1.statSync)(path).isDirectory())
             continue;
         testFiles.push(name);
     }

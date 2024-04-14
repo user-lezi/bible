@@ -13,7 +13,7 @@ async function main(): Promise<void> {
     name = name.replace(/ /g, "/");
     name = `./${name}.js`;
     let path: string = join(__dirname, name);
-    if (!existsSync(path) && statSync(path).isDirectory()) continue;
+    if (!existsSync(path) || statSync(path).isDirectory()) continue;
     testFiles.push(name);
   }
 

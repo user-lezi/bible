@@ -1,0 +1,1 @@
+{"version":3,"file":"Chapter.d.ts","sourceRoot":"","sources":["../../src/structures/Chapter.ts"],"names":[],"mappings":"AAEA,qBAAa,OAAO;IAGC,SAAS,EAAE,MAAM;IAFpC,UAAU,EAAE,MAAM,CAAC;IACnB,MAAM,EAAE,MAAM,EAAE,CAAM;gBACH,SAAS,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,EAAE;CAOvD"}
