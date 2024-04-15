@@ -1,5 +1,5 @@
-import { Translation } from "../../index";
-import getBible from "../../functions/getBible";
+import { Translation } from "../../index"
+import getBible from "../../functions/getBible"
 
-let bible = getBible(Translation.BasicEnglish);
-console.log(bible.length);
+let bible = getBible(Translation.BasicEnglish)
+console.log(bible.length)

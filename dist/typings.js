@@ -148,17 +148,14 @@ for (let book in BookAbbr) {
     let newAbb = [];
     for (let ab of abb) {
         if (/^\d/.test(ab[0])) {
-            let abb = ab[0] + ' ' + ab.slice(1);
-            newAbb.push(abb, abb + '.');
+            let abb = ab[0] + " " + ab.slice(1);
+            newAbb.push(abb, abb + ".");
         }
-        newAbb.push(ab, ab + '.');
+        newAbb.push(ab, ab + ".");
     }
-    newAbb.push(book, /_\d/.test(book) ? book.split('_').reverse().join(' ') : book.replaceAll('_', ' '));
-    BookAbbr[book] = [
-        ...new Set(newAbb)
-    ];
+    newAbb.push(book, /_\d/.test(book) ? book.split("_").reverse().join(" ") : book.replaceAll("_", " "));
+    BookAbbr[book] = [...new Set(newAbb)];
 }
-;
 var PreferredAbbr;
 (function (PreferredAbbr) {
     PreferredAbbr["Genesis"] = "Gen";
@@ -228,5 +225,5 @@ var PreferredAbbr;
     PreferredAbbr["Jude"] = "Jud";
     PreferredAbbr["Revelation"] = "Rev";
 })(PreferredAbbr || (exports.PreferredAbbr = PreferredAbbr = {}));
-exports.Books = Object.keys(DefinedBookAlias).map((name) => /_\d/.test(name) ? name.split('_').reverse().join(' ') : name.replaceAll('_', ' '));
+exports.Books = Object.keys(DefinedBookAlias).map((name) => /_\d/.test(name) ? name.split("_").reverse().join(" ") : name.replaceAll("_", " "));
 //# sourceMappingURL=typings.js.map

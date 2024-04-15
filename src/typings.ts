@@ -72,7 +72,6 @@ export enum DefinedBookAlias {
   Revelation = "Rev",
 }
 
-
 const BookAbbr: { [key: string]: string[] } = {
   Genesis: ["Gen"],
   Exodus: ["Exo", "Ex"],
@@ -141,27 +140,26 @@ const BookAbbr: { [key: string]: string[] } = {
   John_3: ["3Jn", "3Jhn"],
   Jude: ["Jud"],
   Revelation: ["Rev"],
-};
+}
 
 for (let book in BookAbbr) {
-  let abb = BookAbbr[book];
-  let newAbb: string[] = [];
+  let abb = BookAbbr[book]
+  let newAbb: string[] = []
   for (let ab of abb) {
-    if(/^\d/.test(ab[0])) {
-      let abb = ab[0] + ' ' + ab.slice(1);
-      newAbb.push(abb, abb + '.');
+    if (/^\d/.test(ab[0])) {
+      let abb = ab[0] + " " + ab.slice(1)
+      newAbb.push(abb, abb + ".")
     }
-    newAbb.push(ab, ab + '.')
+    newAbb.push(ab, ab + ".")
   }
-  newAbb.push(book, /_\d/.test(book) ? book.split('_').reverse().join(' ') : book.replaceAll('_', ' '));
-  BookAbbr[book] = [
-    ...new Set(newAbb)
-  ];
-};
-
-export {
-  BookAbbr
+  newAbb.push(
+    book,
+    /_\d/.test(book) ? book.split("_").reverse().join(" ") : book.replaceAll("_", " ")
+  )
+  BookAbbr[book] = [...new Set(newAbb)]
 }
+
+export { BookAbbr }
 export enum PreferredAbbr {
   Genesis = "Gen",
   Exodus = "Exo",
@@ -229,7 +227,9 @@ export enum PreferredAbbr {
   John_2 = "2 Jn",
   John_3 = "3 Jn",
   Jude = "Jud",
-  Revelation = "Rev"
+  Revelation = "Rev",
 }
 
-export const Books: string[] = Object.keys(DefinedBookAlias).map((name: string) => /_\d/.test(name) ? name.split('_').reverse().join(' ') : name.replaceAll('_', ' '));
+export const Books: string[] = Object.keys(DefinedBookAlias).map((name: string) =>
+  /_\d/.test(name) ? name.split("_").reverse().join(" ") : name.replaceAll("_", " ")
+)

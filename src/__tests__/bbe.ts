@@ -1,6 +1,7 @@
-import { BasicEnglishBible, BookAbbr } from "../index";
+import { BasicEnglishBible, BookAbbr } from "../index"
 
+let start = Date.now()
+let bible = new BasicEnglishBible()
 
-let bible = new BasicEnglishBible();
-
-console.log(bible.getBook('Jude'));
+console.log(bible.getReading("John 14:6"))
+console.log(Date.now() - start)

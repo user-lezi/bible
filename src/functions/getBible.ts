@@ -1,9 +1,9 @@
-import { readFileSync } from "fs";
-import { join } from "path";
-import { Translation } from "../typings";
+import { readFileSync } from "fs"
+import { join } from "path"
+import { Translation } from "../typings"
 
 export default function getBible(translation: Translation) {
-  let path = join(__dirname, '..', '..', 'bible', translation + '.txt');
+  let path = join(__dirname, "..", "..", "bible", translation + ".txt")
 
-  return readFileSync(path, 'utf8');
+  return readFileSync(path, "utf8")
 }
