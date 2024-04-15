@@ -1,13 +1,13 @@
 {
-  "name": "bible",
+  "name": "bible.ts",
   "version": "0.0.1",
-  "description": "",
+  "description": "Bible in a npm package written in typescript",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
     "test": "prettier src --write && tsc && node dist/__tests__/runner.js"
   },
-  "keywords": [],
+  "keywords": ["bible", "bible.ts", "biblets", "biblejs", "verses", "bible-verses", "lezii"],
   "author": "",
   "license": "ISC",
   "devDependencies": {

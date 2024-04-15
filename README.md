@@ -1,18 +1,18 @@
-# @lezii/bible
+# bible.ts
 > Bible as a npm package
 ## ⬇️ Installation
 ```bash
-npm i @lezii/bible
+npm i bible.ts
 ```
 then,
 ```ts
-import * as BibleJs from "@lezii/package";
+import * as BibleTs from "bible.ts";
 ```
 
 ## 📋 Usage
 ```ts
-import { BasicEnglishBible } from "@lezii/package"; // or
-// const { BasicEnglishBible } = BibleJs;
+import { BasicEnglishBible } from "bible.ts"; // or
+// const { BasicEnglishBible } = BibleTs;
 
 let bible = new BasicEnglishBible();
 let reading = 'John 14:6';
@@ -36,7 +36,7 @@ console.log(
 - **Bible in Basic English (BBE)**
   - Purely Downloaded from [here](http://www.o-bible.com/download/bbe.gz)
 ```ts
-import { BasicEnglishBible, Bible, Translation } from '@lezii/bible';
+import { BasicEnglishBible, Bible, Translation } from 'bible.ts';
 new BasicEnglishBible(); // or
 new Bible(Translation.BasicEnglish);
 ```
