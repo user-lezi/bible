@@ -6,6 +6,7 @@ import { Verse } from "./Verse"
 
 const BibleFullNames = {
   [Translation.BasicEnglish]: "Bible in Basic English (BBE)",
+  [Translation.KingJamesVersion]: "King James Version Bible (KJV)",
 }
 
 export interface Reading {
@@ -123,5 +124,11 @@ export class Bible {
 export class BasicEnglishBible extends Bible {
   constructor() {
     super(Translation.BasicEnglish)
+  }
+}
+
+export class KingJamesVersionBible extends Bible {
+  constructor() {
+    super(Translation.KingJamesVersion)
   }
 }

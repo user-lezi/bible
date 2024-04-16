@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BasicEnglishBible = exports.Bible = void 0;
+exports.KingJamesVersionBible = exports.BasicEnglishBible = exports.Bible = void 0;
 const typings_1 = require("../typings");
 const getBible_1 = __importDefault(require("../functions/getBible"));
 const subscript_1 = __importDefault(require("../functions/subscript"));
@@ -11,6 +11,7 @@ const Book_1 = require("./Book");
 const Verse_1 = require("./Verse");
 const BibleFullNames = {
     [typings_1.Translation.BasicEnglish]: "Bible in Basic English (BBE)",
+    [typings_1.Translation.KingJamesVersion]: "King James Version Bible (KJV)",
 };
 class Bible {
     translation;
@@ -104,4 +105,10 @@ class BasicEnglishBible extends Bible {
     }
 }
 exports.BasicEnglishBible = BasicEnglishBible;
+class KingJamesVersionBible extends Bible {
+    constructor() {
+        super(typings_1.Translation.KingJamesVersion);
+    }
+}
+exports.KingJamesVersionBible = KingJamesVersionBible;
 //# sourceMappingURL=Bible.js.map

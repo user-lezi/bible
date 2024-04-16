@@ -29,6 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const prompt_1 = __importDefault(require("../functions/prompt"));
 const fs_1 = require("fs");
 const path_1 = require("path");
+console.clear();
 async function main() {
     let testNamesStr = (await (0, prompt_1.default)("Enter test names (separated by commas):")) || "";
     let testNames = testNamesStr.split(",").map((name) => name.trim());

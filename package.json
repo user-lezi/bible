@@ -1,6 +1,6 @@
 {
   "name": "bible.ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bible in a npm package written in typescript",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",

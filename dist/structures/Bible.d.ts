@@ -24,4 +24,7 @@ export declare class Bible {
 export declare class BasicEnglishBible extends Bible {
     constructor();
 }
+export declare class KingJamesVersionBible extends Bible {
+    constructor();
+}
 //# sourceMappingURL=Bible.d.ts.map

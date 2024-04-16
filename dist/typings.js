@@ -4,6 +4,7 @@ exports.Books = exports.PreferredAbbr = exports.BookAbbr = exports.DefinedBookAl
 var Translation;
 (function (Translation) {
     Translation["BasicEnglish"] = "bbe";
+    Translation["KingJamesVersion"] = "kjv";
 })(Translation || (exports.Translation = Translation = {}));
 var DefinedBookAlias;
 (function (DefinedBookAlias) {

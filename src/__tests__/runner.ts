@@ -2,6 +2,8 @@ import prompt from "../functions/prompt"
 import { existsSync, statSync } from "fs"
 import { join } from "path"
 
+console.clear()
+
 async function main(): Promise<void> {
   let testNamesStr = (await prompt("Enter test names (separated by commas):")) || ""
   let testNames: string[] = testNamesStr.split(",").map((name) => name.trim())

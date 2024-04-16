@@ -1,5 +1,6 @@
 export enum Translation {
   BasicEnglish = "bbe",
+  KingJamesVersion = "kjv",
 }
 
 export enum DefinedBookAlias {

@@ -17,9 +17,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getBible = void 0;
+exports.getReading = exports.getBible = void 0;
 const getBible_1 = __importDefault(require("./functions/getBible"));
 exports.getBible = getBible_1.default;
+const typings_1 = require("./typings");
+const Bible_1 = require("./structures/Bible");
 __exportStar(require("./typings"), exports);
 __exportStar(require("./structures"), exports);
+let translations = Object.values(typings_1.Translation);
+function getReading(verse) {
+    let output = [];
+    for (let translation of translations) {
+        let bible = new Bible_1.Bible(translation);
+        let reading = bible.getReading(verse);
+        if (reading) {
+            output.push({
+                ...reading,
+                translation,
+                bible,
+            });
+        }
+    }
+    return output;
+}
+exports.getReading = getReading;
 //# sourceMappingURL=index.js.map

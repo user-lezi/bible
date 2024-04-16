@@ -34,16 +34,26 @@ console.log(
 
 ## 🔠 Translations Available.
 - **Bible in Basic English (BBE)**
-  - Purely Downloaded from [here](http://www.o-bible.com/download/bbe.gz)
+  - Purely Downloaded from [here](http://www.o-bible.com/download/bbe.gz).
 ```ts
 import { BasicEnglishBible, Bible, Translation } from 'bible.ts';
 new BasicEnglishBible(); // or
 new Bible(Translation.BasicEnglish);
 ```
+- **King James Version Bible (KJV)**
+  - Download from [here](http://www.o-bible.com/download/kjv.gz) and modified accordingly to be parsed by the package.
+```ts
+import { KingJamesVersionBible, Bible, Translation } from 'bible.ts';
+new KingJamesVersionBible(); // or
+new Bible(Translation.KingJamesVersion);
+```
 > More will be adding soon..
 
 
 ## ⏰ Changelog
+### @0.0.2
+- Added another translation `KingJamesVersionBible()`
+- Added `getReading(verse: string)` to get reading from all translations at single call.
 ### @0.0.1
 - First translation in package `BasicEnglishBible()`
 - Main class `Bible` has been added.

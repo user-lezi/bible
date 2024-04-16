@@ -4,7 +4,7 @@ import getBible from "../../functions/getBible"
 import { writeFileSync } from "fs"
 import { join } from "path"
 
-let bible = getBible(Translation.BasicEnglish)
+let bible = getBible(Translation.KingJamesVersion)
 let lines = bible.split("\n")
 let missingLines: string[] = []
 
