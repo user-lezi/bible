@@ -51,6 +51,11 @@ new Bible(Translation.KingJamesVersion);
 
 
 ## ⏰ Changelog
+### @0.0.3
+- Reduced the size by compressing the bible text.
+- Added new verse format:
+  - `Romans 12:9f` - Get the verse and its following verse. (Same as `Romans 12:9-10`)
+  - `Romans 12:9ff` - Get the verse and its following verses. (Same as `Romans 12:9-21`)
 ### @0.0.2
 - Added another translation `KingJamesVersionBible()`
 - Added `getReading(verse: string)` to get reading from all translations at single call.

@@ -1,7 +1,7 @@
-import { KingJamesVersionBible, BookAbbr } from "../index"
+import { BasicEnglishBible } from "../index"
 
 let start = Date.now()
-let bible = new KingJamesVersionBible()
+let bible = new BasicEnglishBible()
 
-console.log(bible.getReading("Ps 2:1"))
+console.log(bible.getReading("Ps 2:1ff"))
 console.log(Date.now() - start)

@@ -63,6 +63,16 @@ export class Verse {
       ) /* Ex 2. 1 Cor 1:22-25 */,
 
       new RegExp(`^${this.bookNameRegex} +${this.numRegex}$`, "i") /* Ex 3. Ps 91 */,
+
+      new RegExp(
+        `^${this.bookNameRegex} +${this.numRegex} *: *${this.numRegex}f$`,
+        "i"
+      ) /* Romans 12:9 (verse 9 and following verse) */,
+
+      new RegExp(
+        `^${this.bookNameRegex} +${this.numRegex} *: *${this.numRegex}ff$`,
+        "i"
+      ) /* Romans 12:9 (verse 9 and following verses) */,
     ]
 
     if (regexps[0].test(verse)) {
@@ -110,6 +120,47 @@ export class Verse {
         book: book,
         chapter: chapterNum,
         verses: [],
+      }
+    } else if (regexps[3].test(verse)) {
+      let match = verse.match(regexps[3]) || []
+      let book = match[1]
+      let chapterNum = parseInt(match[2])
+      let verseNum = parseInt(match[3])
+
+      if (chapterNum < 1) throw new Error("Chapter number must be greater than 0")
+      if (verseNum < 1) throw new Error("Verse number must be greater than 0")
+
+      return {
+        book: book,
+        chapter: chapterNum,
+        verses: [verseNum, verseNum + 1],
+      }
+    } else if (regexps[4].test(verse)) {
+      let match = verse.match(regexps[4]) || []
+      let book = match[1]
+      let chapterNum = parseInt(match[2])
+      let verseNum = parseInt(match[3])
+
+      if (chapterNum < 1) throw new Error("Chapter number must be greater than 0")
+      if (verseNum < 1) throw new Error("Verse number must be greater than 0")
+
+      let verses: number[] = []
+      let Book = this.bible.getBook(book)
+      if (!Book) throw new Error("Book not found")
+      if (chapterNum > Book.chaptersCount)
+        throw new Error(
+          `Chapter not found in book "${Book.name}" [${chapterNum} > ${Book.chaptersCount}]`
+        )
+      let chapter = Book.getChapter(chapterNum)
+      let verseCount = chapter.verseCount
+      for (let i = verseNum; i <= verseCount; i++) {
+        verses.push(i)
+      }
+
+      return {
+        book: book,
+        chapter: chapterNum,
+        verses,
       }
     }
 
