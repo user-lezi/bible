@@ -1,11 +1,12 @@
 {
   "name": "bible.ts",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Bible in a npm package written in typescript",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
-    "test": "prettier src --write && tsc && node dist/__tests__/runner.js"
+    "build": "prettier -w src && tsc",
+    "test": "node __tests__/runner.js"
   },
   "keywords": ["bible", "bible.ts", "biblets", "biblejs", "verses", "bible-verses", "lezii"],
   "author": "",
@@ -14,5 +15,9 @@
     "@types/node": "^20.10.5",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }
