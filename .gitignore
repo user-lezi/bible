@@ -4,3 +4,4 @@ node_modules/
 replit.nix
 \.npmignore
 \.upm/
+.*
